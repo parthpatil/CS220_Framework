@@ -1,10 +1,10 @@
 
-#include "../Headers/grid.h"
 #include "../Headers/problem_object.h"
 #include <time.h>
 #include <cstdlib>
 #include <iostream>
-
+#include "../Headers/lee_grid.h"
+ 
 using std::cerr;
 using std::cout;
 using std::endl;
@@ -20,7 +20,7 @@ int main(int argc,char* argv[]) {
 	// EDIT FROM HERE DOWN
 
 	//Create your problem map object (in our example, we use a simple grid, you should create your own)
-	Utilities::Grid g(first_problem->get_width(), first_problem->get_height());
+	Utilities::lee_grid g(first_problem);
 
 	/*
 	Note: we do not take into account the connections or blockers that exist in the Project Object
@@ -38,7 +38,7 @@ int main(int argc,char* argv[]) {
 	*/
 
 	//Note, we create random paths just as an example of how to create paths, netlists are created similarly
-	vector<Path*> paths;
+/*	vector<Path*> paths;
 	srand(time(NULL));
 	int number_paths = first_problem->get_connections().size();
 	cout << "Creating " << number_paths << " paths...";
@@ -58,9 +58,9 @@ int main(int argc,char* argv[]) {
 		paths.push_back(new_path);
 	}
 	cout << "Completed." << endl;
-
+*/
 	//Print the paths/netlists that you have return from your algorithm
-	for (unsigned i = 0;i < paths.size();i++) {
+/*	for (unsigned i = 0;i < paths.size();i++) {
 		cout << "\tPath " << i+1 << " of " << paths.size() << ": (" 
 			 << paths.at(i)->at(0)->get_source().x << "," << paths.at(i)->at(0)->get_source().y << ") ";
 		for (unsigned j = 0;j < paths.at(i)->size();j++) {
@@ -71,7 +71,7 @@ int main(int argc,char* argv[]) {
 		delete temp;
 	}
 	paths.clear();
-
+*/
 	delete first_problem;
 
 	return 0;
