@@ -2,6 +2,9 @@ CS220 Project Framework
 ===============
 GRID ROUTING PROJECT BY KUSHAL SHAH AND PARTH PATIL
 
+LEE's algorithm implemented
+lee_grid header and source file used for the same.
+
 ## Project Overview
 
 You will use this framework for the following projects:
