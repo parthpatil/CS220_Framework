@@ -3,6 +3,7 @@
 
 #include "node.h"
 #include "path.h"
+#include "point.h"
 #include <vector>
 #include "../Headers/problem_object.h"
 using std::cerr;
@@ -17,9 +18,23 @@ namespace Utilities {
            int width;
            int height;
            int source_x;
-        public:
-            /* Constructors/Destructors */
+           vector<Connection> conn;
+ 	   vector<Blocker> block;
+	int count;
+	int sx,sy,tx,ty;
+	int v, h1;
+	int w,h,l,k;
+        public: 
+            vector<Point> paths[20]; 
+		vector<Point> paths1[20];
+			vector<Point> paths2[20];
+
+            int count1;
+	    /* Constructors/Destructors */
             lee_grid(ProblemObject *problem_object);
+            void lee_algo();
+		void aker_2bit_algo();
+		void aker_3bit_algo();
 
     };
 }

@@ -7,6 +7,7 @@
  
 using std::cerr;
 using std::cout;
+using std::cin;
 using std::endl;
 
 int main(int argc,char* argv[]) {
@@ -21,6 +22,52 @@ int main(int argc,char* argv[]) {
 
 	//Create your problem map object (in our example, we use a simple grid, you should create your own)
 	Utilities::lee_grid g(first_problem);
+	cout<<"enter choice of algorithm\n";
+	cout<<"press 1 for lee ,2 for aker's 2bit, 3 for aker's 3 bit and 7 for all\n";
+int choice;
+	cin>>choice;
+	if(choice==1||choice==7)
+	{	g.lee_algo();
+		
+	cout<<"\n";
+	for(int j=0;j<g.count1;j++)
+        {
+		cout<<"\n";
+		cout<<"trace back for route "<<j+1<<" is\n";
+        for(int i=0;i<g.paths[j].size();i++)
+	{
+		cout<<"("<<g.paths[j][i].x<<","<<g.paths[j][i].y<<")"<<"\t";
+	}
+	}
+	}
+	if(choice==2||choice==7)
+	{
+	g.aker_2bit_algo();
+	cout<<"\n";
+		for(int j=0;j<g.count1;j++)
+        {
+		cout<<"\n";
+		cout<<"trace back for route "<<j+1<<" is\n";
+        for(int i=0;i<g.paths1[j].size();i++)
+	{
+		cout<<"("<<g.paths1[j][i].x<<","<<g.paths1[j][i].y<<")"<<"\t";
+	}
+	}
+	}
+	if(choice==3||choice==7)
+	{
+	g.aker_3bit_algo();
+	cout<<"\n";
+		for(int j=0;j<g.count1;j++)
+        {
+		cout<<"\n";
+		cout<<"trace back for route "<<j+1<<" is\n";
+        for(int i=0;i<g.paths2[j].size();i++)
+	{
+		cout<<"("<<g.paths2[j][i].x<<","<<g.paths2[j][i].y<<")"<<"\t";
+	}
+	}
+	}
 
 	/*
 	Note: we do not take into account the connections or blockers that exist in the Project Object
