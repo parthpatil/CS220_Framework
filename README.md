@@ -5,6 +5,16 @@ GRID ROUTING PROJECT BY KUSHAL SHAH AND PARTH PATIL
 LEE's algorithm implemented
 lee_grid header and source file used for the same.
 
+Done changes that were told for lee's algorithm as well as implemented 2-bit akers and 3 bit akers algorithm.
+
+changes done in lee
+1.source named as -2, sink as -3 and blockers as -1
+2.path vector used to display traceback
+3.separate functions created for each algorithm.
+4. private variables declared
+5. added a feature to select algorithm by user.
+
+
 ## Project Overview
 
 You will use this framework for the following projects:
