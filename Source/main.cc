@@ -4,7 +4,10 @@
 #include <cstdlib>
 #include <iostream>
 #include "../Headers/lee_grid.h"
- 
+ #include "../Headers/ruben.h"
+#include "../Headers/korn.h"
+#include "../Headers/hadl_grid.h"
+
 using std::cerr;
 using std::cout;
 using std::cin;
@@ -21,54 +24,77 @@ int main(int argc,char* argv[]) {
 	// EDIT FROM HERE DOWN
 
 	//Create your problem map object (in our example, we use a simple grid, you should create your own)
-	Utilities::lee_grid g(first_problem);
-	cout<<"enter choice of algorithm\n";
-	cout<<"press 1 for lee ,2 for aker's 2bit, 3 for aker's 3 bit and 7 for all\n";
-int choice;
+	Utilities::lee_grid g1(first_problem);
+	Utilities::ruben g2(first_problem);
+	Utilities::hadl_grid g4(first_problem);
+
+
+
+	cout<<"Enter choice of Algorithm\n";
+	cout<<"Press \n1 for Lee's  \n2 for Aker's 2bit \n3 for Aker's 3 bit \n4 for Ruben's Algo \n5 for Korn's Algo\n6 for Hadlock \n\n";
+	
+	int choice;
 	cin>>choice;
-	if(choice==1||choice==7)
-	{	g.lee_algo();
+	if(choice==1)
+	{	
+		g1.lee_algo();
 		
 	cout<<"\n";
-	for(int j=0;j<g.count1;j++)
+	for(int j=0;j<g1.count1;j++)
         {
 		cout<<"\n";
 		cout<<"trace back for route "<<j+1<<" is\n";
-        for(int i=0;i<g.paths[j].size();i++)
+        for(int i=0;i<g1.paths[j].size();i++)
 	{
-		cout<<"("<<g.paths[j][i].x<<","<<g.paths[j][i].y<<")"<<"\t";
+		cout<<"("<<g1.paths[j][i].x<<","<<g1.paths[j][i].y<<")"<<"\t";
 	}
 	}
 	}
-	if(choice==2||choice==7)
+	if(choice==2)
 	{
-	g.aker_2bit_algo();
+	g1.aker_2bit_algo();
 	cout<<"\n";
-		for(int j=0;j<g.count1;j++)
+		for(int j=0;j<g1.count1;j++)
         {
 		cout<<"\n";
 		cout<<"trace back for route "<<j+1<<" is\n";
-        for(int i=0;i<g.paths1[j].size();i++)
+        for(int i=0;i<g1.paths1[j].size();i++)
 	{
-		cout<<"("<<g.paths1[j][i].x<<","<<g.paths1[j][i].y<<")"<<"\t";
+		cout<<"("<<g1.paths1[j][i].x<<","<<g1.paths1[j][i].y<<")"<<"\t";
 	}
 	}
 	}
-	if(choice==3||choice==7)
+	if(choice==3)
 	{
-	g.aker_3bit_algo();
+	g1.aker_3bit_algo();
 	cout<<"\n";
-		for(int j=0;j<g.count1;j++)
+		for(int j=0;j<g1.count1;j++)
         {
 		cout<<"\n";
 		cout<<"trace back for route "<<j+1<<" is\n";
-        for(int i=0;i<g.paths2[j].size();i++)
+        for(int i=0;i<g1.paths2[j].size();i++)
 	{
-		cout<<"("<<g.paths2[j][i].x<<","<<g.paths2[j][i].y<<")"<<"\t";
+		cout<<"("<<g1.paths2[j][i].x<<","<<g1.paths2[j][i].y<<")"<<"\t";
 	}
 	}
 	}
-
+	if(choice==4)
+	{
+	g2.ruben_algo();
+	cout<<"\n";
+	}
+	if(choice==5)
+	{
+	Utilities::korn g3(first_problem);
+	g3.korn_algo();
+	}
+	if(choice==6)
+	{
+		for(int i=0;i<g4.conn.size();i++)
+	{
+	g4.hadlock_algo();
+	}
+	}
 	/*
 	Note: we do not take into account the connections or blockers that exist in the Project Object
 	You should be accouting for these in your problem map objects (you should not be using Grid). You

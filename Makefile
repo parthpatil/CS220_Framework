@@ -1,6 +1,6 @@
 
 SRC=$(filter-out %main.cc, Source/*)
-OBJ=lee_grid.o claim.o edge.o grid.o netlist.o node.o path.o pathsegment.o problem_object.o segmentgroup.o 
+OBJ=hadl_grid.o korn.o ruben.o lee_grid.o claim.o edge.o grid.o netlist.o node.o path.o pathsegment.o problem_object.o segmentgroup.o 
 
 vpath %.cc Source/
 
