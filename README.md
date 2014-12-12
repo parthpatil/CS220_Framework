@@ -15,6 +15,6 @@ hdlk_grid.cc has Hadlock algorithm.
 
 
 Notes:
-1.Source named as -2, sink as -3 and blockers as -1 (For ruben's algorithm consider 70 as a source and 80 as a sink. And 100 as a obstacle. It can be changed to scale the algorithm at higher level with higher interger values.)
+1.Source named as -2, sink as -3 and blockers as -1. (For ruben's algorithm consider 70 as a source,80 as a sink and 100 as an obstacle. It can be changed to scale the algorithm at higher level with higher interger values.)
 3.separate functions,headers and source files were created for each algorithm.
 5.Added a feature to select algorithm by user.
